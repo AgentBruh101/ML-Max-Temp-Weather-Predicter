@@ -15,10 +15,30 @@ Our custom LSTM achieves a 3.7% improvement over linear regression and a 14% imp
 
 # Dataset
 This project uses the <ins>Seattle Weather Prediction dataset</ins> from [Kaggle](https://www.kaggle.com/datasets/ananthr1/weather-prediction?resource=download)
+Download and place 'seattle-weather.csv' in the project root before running. 
+
+### Dataset Features
+This dataset contains 1,461 daily records between the years 2012-2015 with the following features: 
+| **Feature** | **Description**|
+| --- | --- |
+| `precipitation` | Daily precipitation (mm)| 
+| `temp_max` | Max Temp (C) (**Prediction Target**) |
+| `temp_min` | Min Temp (C)| 
+| `wind` | Wind Speed (m/s)| 
+| `weather` | Categorical Label (sunny, rain, drizzle, fog, snow)| 
+
 # LSTM Components 
 **What is an LSTM?**
 Long Short-Term Memory(LSTM) is an improved version of the Recurrent Neural Network(RNN). LSTMs are designed to capture long-term dependencies 
 in sequential data. It uses memory cells to store data over time which solves the challenge that RNNs faced. 
+
+## LSTM Components in our project
+1. Gate Operations: forget, input, candidate cell state, and output gates.
+2. Forward Pass: Full sequence across 7 time steps (7 previous days).
+3. Backward Pass: Backpropagation Through Time (BPTT) with intermediate states being stored.
+4. Adam Optimizer: Adapative moment estimation with bias correction included.
+5. Gradient Clipping: Prevents possible exploding gradients during the training phase.
+6. Xavier Weight Initialization: Proper scaling of variance for increased stability.
 
 ## LSTM Architecture
 1. Input Gate: Controls what info is added to the memory cell
@@ -37,3 +57,8 @@ and the current state of the memory cell.
 4. Video Analysis: Object detection, activity recognition, action classification.
 
 
+### Authors
+Anthony Salto,
+Pedro Garcia,
+Sharvesh Suba Palaniraj,
+Daisy Nguyen 
